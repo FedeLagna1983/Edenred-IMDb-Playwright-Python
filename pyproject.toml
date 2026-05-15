@@ -1,0 +1,23 @@
+[project]
+name = "edenred-imdb-automation"
+version = "0.1.0"
+description = "Python automation challenge for IMDb UI tests."
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=8.3",
+    "playwright>=1.48",
+    "behave>=1.2.6",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+    "ui: browser-based IMDb tests",
+    "imdb: tests that exercise IMDb",
+    "requires_auth: tests that need IMDb credentials",
+]
+
+[tool.behave]
+paths = ["features"]
+steps_dir = "steps"
